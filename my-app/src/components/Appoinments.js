@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { fontFamily, fontWeight, fontSize, color } from "./Constants";
 
 const Appoinments = (props) => {
   if (props.appoinments.length === 0) return null;
@@ -11,27 +10,21 @@ const Appoinments = (props) => {
   const Card = styled.section``;
   const Title = styled.h2``;
   const Par = styled.p``;
-  const Details = styled.ul``;
-  const Detail = styled.li``;
+  //const Done = styled.input``;
   console.log(appoinments);
   return (
     <Container>
       {appoinments.map((appoinment) => (
-        <Link key={appoinment._id} to="">
+        <Link key={appoinment._id} to="/c-appoinment">
           <Card>
-            <Title>REGISTRO</Title>
-            <Par>Tipo: </Par>
+            <Title>Cita</Title>
             <Par>Fecha: {appoinment.date}</Par>
-            <Par>Hora: </Par>
-            <Details>
-              <Detail>Nombre: {appoinment.name}</Detail>
-              <Detail>Fecha de nacimiento: </Detail>
-              <Detail>Motivo de asistencia: {appoinment.symptom}</Detail>
-              <Detail>Observaciones: </Detail>
-              <Detail>Nombre del propietario: {appoinment.owner}</Detail>
-              <Detail>Teléfono: {appoinment.phone}</Detail>
-              <Detail>Correo electrónico: </Detail>
-            </Details>
+            <Par>Hora: {appoinment.time}</Par>
+            <Par>Cliente: {appoinment.client}</Par>
+            <Par>Paciente: {appoinment.patient}</Par>
+            <Par>Motivo: {appoinment.reason}</Par>
+            <Par>Hora: {appoinment.time}</Par>
+            <Par>{appoinment.done.toString()}</Par>
           </Card>
         </Link>
       ))}

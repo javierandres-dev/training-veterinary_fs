@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import CreateAppoinment from "./components/CreateAppoinment";
 import Appoinments from "./components/Appoinments";
 import Footer from "./components/Footer";
 import axiosClient from "./helpers/requests";
+import { GlobalStyle } from "./components/Styles";
 
 function App() {
   //console.info(process.env.REACT_APP_REST_API_URL);
@@ -15,7 +17,7 @@ function App() {
       axiosClient
         .get("/api/v1/appoinments")
         .then((res) => {
-          //console.log(res.data);
+          console.log(res.data);
           setAppoinments(res.data);
         })
         .catch((error) => {
@@ -26,10 +28,12 @@ function App() {
   }, []);
   return (
     <Router>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/c-appoinment" component={CreateAppoinment} />
         <Route
           exact
           path="/appoinments"

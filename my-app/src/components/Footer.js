@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { fontFamily, fontWeight, fontSize } from "./Constants";
 
 const Container = styled.footer`
   text-align: center;
-  font-family: ${fontFamily.base};
-  font-weight: ${fontWeight.base};
-  font-size: ${fontSize.small};
   padding: 0.5rem;
 `;
 const Par = styled.p`

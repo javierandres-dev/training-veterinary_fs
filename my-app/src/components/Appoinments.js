@@ -23,7 +23,6 @@ const Appoinments = (props) => {
             <Par>Cliente: {appoinment.client}</Par>
             <Par>Paciente: {appoinment.patient}</Par>
             <Par>Motivo: {appoinment.reason}</Par>
-            <Par>Hora: {appoinment.time}</Par>
             <Par>{appoinment.done.toString()}</Par>
           </Card>
         </Link>

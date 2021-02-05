@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { fontSize } from "./Styles";
 
 const Container = styled.header`
   display: flex;
@@ -10,13 +11,16 @@ const Container = styled.header`
 `;
 const H1 = styled.h1`
   margin: 0;
+  font-size: ${fontSize.base};
 `;
 const Nav = styled.nav``;
 const Ul = styled.ul`
   list-style: none;
   margin: 0;
 `;
-const Li = styled.li``;
+const Li = styled.li`
+  font-size: ${fontSize.base};
+`;
 
 const Header = () => {
   return (
@@ -26,8 +30,9 @@ const Header = () => {
       </NavLink>
       <Nav>
         <Ul>
+          <NavLink to="/">Inicio</NavLink>
           <Li>
-            <NavLink to="/login">Iniciar sesión</NavLink>
+            <NavLink to="/login">Portal</NavLink>
           </Li>
         </Ul>
       </Nav>

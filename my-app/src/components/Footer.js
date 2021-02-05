@@ -1,27 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import { fontSize } from "./Styles";
 
 const Container = styled.footer`
   text-align: center;
   padding: 0.5rem;
-`;
-const Par = styled.p`
-  margin: 0;
+  font-size: ${fontSize.small};
 `;
 
 const Footer = () => {
   return (
     <Container>
-      <Par>
-        ¿Necesita un desarrollo de software?{" "}
+      <p>
+        ¿Necesita desarrollo de software?&nbsp;
         <a
           href="https://www.javierandresgp.com"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           target="_blank"
         >
-          Contacteme
+          Contácteme
         </a>
-      </Par>
+      </p>
     </Container>
   );
 };

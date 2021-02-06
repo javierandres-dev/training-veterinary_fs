@@ -1,7 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Main } from "./Styles";
 
 const Login = () => {
-  return <main role="main">login....</main>;
+  return (
+    <Main role="main">
+      <p>from login...</p>
+      <Link to="/appoinments">Citas</Link>
+    </Main>
+  );
 };
 
 export default Login;

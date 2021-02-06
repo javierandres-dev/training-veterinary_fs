@@ -74,7 +74,7 @@ export const color = {
   dark: "#1A2526",
 };
 
-/* MAIN
+/* CONTAINERS
   ============================= */
 export const Main = styled.main`
   width: 96%;

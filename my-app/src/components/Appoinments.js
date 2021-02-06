@@ -14,18 +14,18 @@ const Appoinments = (props) => {
   console.log(appoinments);
   return (
     <Container>
+      <Link to="/c-appoinment">Nueva cita</Link>
       {appoinments.map((appoinment) => (
-        <Link key={appoinment._id} to="/c-appoinment">
-          <Card>
-            <Title>Cita</Title>
-            <Par>Fecha: {appoinment.date}</Par>
-            <Par>Hora: {appoinment.time}</Par>
-            <Par>Cliente: {appoinment.client}</Par>
-            <Par>Paciente: {appoinment.patient}</Par>
-            <Par>Motivo: {appoinment.reason}</Par>
-            <Par>{appoinment.done.toString()}</Par>
-          </Card>
-        </Link>
+        <Card>
+          <Title>Cita</Title>
+          <Par>Fecha: {appoinment.date}</Par>
+          <Par>Hora: {appoinment.time}</Par>
+          <Par>Cliente: {appoinment.client}</Par>
+          <Par>Paciente: {appoinment.patient}</Par>
+          <Par>Motivo: {appoinment.reason}</Par>
+          <Par>{appoinment.done.toString()}</Par>
+          <Link to={`/e-appoinment/${appoinment._id}`}>Editar cita</Link>
+        </Card>
       ))}
     </Container>
   );

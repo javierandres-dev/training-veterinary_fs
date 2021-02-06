@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+import axiosClient from "../helpers/requests";
 import { Main, Form, Fieldset, Legend, Label, Input, Button } from "./Styles";
 
-const CreateAppoinment = () => {
+const CreateAppoinment = (props) => {
   const [appoinment, setAppoinment] = useState({
     date: "",
     time: "",
@@ -17,9 +20,20 @@ const CreateAppoinment = () => {
     });
   };
 
+  const newAppoinment = (e) => {
+    e.preventDefault();
+    console.log(appoinment);
+    axiosClient.post("api/v1/appoinments", appoinment).then((res) => {
+      console.log(res);
+      props.setQuery(true);
+      props.history.push("/appoinments");
+    });
+  };
+
   return (
     <Main role="main">
-      <Form>
+      <Link to="/appoinments">Regresar</Link>
+      <Form onSubmit={newAppoinment}>
         <Fieldset>
           <Legend>Nueva cita</Legend>
           <Label htmlFor="date">Fecha</Label>
@@ -57,4 +71,4 @@ const CreateAppoinment = () => {
   );
 };
 
-export default CreateAppoinment;
+export default withRouter(CreateAppoinment);

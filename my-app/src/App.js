@@ -56,7 +56,9 @@ function App() {
               (appoinment) => appoinment._id === props.match.params.id
             );
             console.log(appoinment);
-            return <EditAppoinment appoinment={appoinment} />;
+            return (
+              <EditAppoinment appoinment={appoinment} setQuery={setQuery} />
+            );
           }}
         />
       </Switch>

@@ -1,16 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+//import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import axiosClient from "../helpers/requests";
 import Swal from "sweetalert2";
 import { Main, Form, Fieldset, Legend, Label, Input, Button } from "./Styles";
 
 const EditAppoinment = (props) => {
+  const { _id, date, time, client, patient, reason } = props.appoinment[0];
+  //console.log(_id, date, time, client, patient, reason);
+
+  const [appoinment, setAppoinment] = useState({
+    date,
+    time,
+    client,
+    patient,
+    reason,
+  });
+
+  const updateState = (e) => {
+    setAppoinment({
+      ...appoinment,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const updateAppoinment = (e) => {
+    e.preventDefault();
+    axiosClient.put(`api/v1/appoinments/${_id}`, appoinment).then((res) => {
+      console.log(res);
+      props.setQuery(true);
+      props.history.push("/");
+    });
+  };
+  //
   if (!props.appoinment) {
-    props.history.push("/appoinments");
+    props.history.push("/");
     return null;
   }
-  const { _id, patient } = props.appoinment[0];
-  console.log(_id);
+
+  //
   const deleteAppoinment = (id) => {
     console.log(id);
     Swal.fire({
@@ -31,7 +59,7 @@ const EditAppoinment = (props) => {
           .then((res) => {
             console.log(res);
             props.setQuery(true);
-            props.history.push("/appoinments");
+            props.history.push("/");
           })
           .catch((err) => {
             console.log(err);
@@ -41,10 +69,41 @@ const EditAppoinment = (props) => {
   };
   return (
     <Main role="main">
-      <Link to="/appoinments">Regresar</Link>
-      <p>from edit .... </p>
-      <p>{patient}</p>
-      <Button type="button">Actualizar</Button>
+      <Link to="/">Regresar</Link>
+      <Form onSubmit={updateAppoinment}>
+        <Fieldset>
+          <Legend>Cita</Legend>
+          <Label htmlFor="date">Fecha asignada: {date}</Label>
+          <Input type="date" id="date" name="date" onChange={updateState} />
+          <Label htmlFor="time">Hora asignada: {time}</Label>
+          <Input type="time" id="time" name="time" onChange={updateState} />
+          <Label htmlFor="client">Cliente</Label>
+          <Input
+            type="text"
+            id="client"
+            name="client"
+            onChange={updateState}
+            placeholder={client}
+          />
+          <Label htmlFor="patient">Paciente</Label>
+          <Input
+            type="text"
+            id="patient"
+            name="patient"
+            onChange={updateState}
+            placeholder={patient}
+          />
+          <Label htmlFor="reason">Motivo</Label>
+          <Input
+            type="text"
+            id="reason"
+            name="reason"
+            onChange={updateState}
+            placeholder={reason}
+          />
+        </Fieldset>
+        <Button type="submit">Actualizar</Button>
+      </Form>
       <Button type="button" onClick={() => deleteAppoinment(_id)}>
         Eliminar
       </Button>

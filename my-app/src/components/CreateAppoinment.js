@@ -26,13 +26,13 @@ const CreateAppoinment = (props) => {
     axiosClient.post("api/v1/appoinments", appoinment).then((res) => {
       console.log(res);
       props.setQuery(true);
-      props.history.push("/appoinments");
+      props.history.push("/");
     });
   };
 
   return (
     <Main role="main">
-      <Link to="/appoinments">Regresar</Link>
+      <Link to="/">Regresar</Link>
       <Form onSubmit={newAppoinment}>
         <Fieldset>
           <Legend>Nueva cita</Legend>

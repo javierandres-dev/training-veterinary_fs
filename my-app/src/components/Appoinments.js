@@ -11,7 +11,7 @@ const Appoinments = (props) => {
   const Title = styled.h2``;
   const Par = styled.p``;
   //const Done = styled.input``;
-  console.log(appoinments);
+  //console.log(appoinments);
   return (
     <Container>
       <Link to="/c-appoinment">Nueva cita</Link>
@@ -24,7 +24,9 @@ const Appoinments = (props) => {
           <Par>Paciente: {appoinment.patient}</Par>
           <Par>Motivo: {appoinment.reason}</Par>
           <Par>{appoinment.done.toString()}</Par>
-          <Link to={`/e-appoinment/${appoinment._id}`}>Editar cita</Link>
+          <Link key={`$appoinment._id`} to={`/e-appoinment/${appoinment._id}`}>
+            Editar
+          </Link>
         </Card>
       ))}
     </Container>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import axiosClient from "../helpers/requests";
 import Swal from "sweetalert2";
@@ -7,7 +6,6 @@ import { Main, Form, Fieldset, Legend, Label, Input, Button } from "./Styles";
 
 const EditAppoinment = (props) => {
   const { _id, date, time, client, patient, reason } = props.appoinment[0];
-  //console.log(_id, date, time, client, patient, reason);
 
   const [appoinment, setAppoinment] = useState({
     date,
@@ -38,7 +36,6 @@ const EditAppoinment = (props) => {
     return null;
   }
 
-  //
   const deleteAppoinment = (id) => {
     console.log(id);
     Swal.fire({
@@ -67,6 +64,7 @@ const EditAppoinment = (props) => {
       }
     });
   };
+
   return (
     <Main role="main">
       <Link to="/">Regresar</Link>

@@ -24,7 +24,6 @@ const CreateAppoinment = (props) => {
     e.preventDefault();
     console.log(appoinment);
     axiosClient.post("api/v1/appoinments", appoinment).then((res) => {
-      console.log(res);
       props.setQuery(true);
       props.history.push("/");
     });

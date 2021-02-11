@@ -29,17 +29,7 @@ function App() {
       queryApi();
     }
   }, [query]);
-  /*
-//import Appoinments from "./components/Appoinments";
-//import Login from "./components/Login";
-<Route exact path="/" component={Home} />
-<Route exact path="/login" component={Login} />
-<Route
-  exact
-  path="/appoinments"
-  component={() => <Appoinments appoinments={appoinments} />}
-/>
-*/
+
   return (
     <Router>
       <GlobalStyle />
@@ -63,7 +53,6 @@ function App() {
             const appoinment = appoinments.docs.filter(
               (appoinment) => appoinment._id === props.match.params.id
             );
-            //console.log(appoinment);
             return (
               <EditAppoinment appoinment={appoinment} setQuery={setQuery} />
             );

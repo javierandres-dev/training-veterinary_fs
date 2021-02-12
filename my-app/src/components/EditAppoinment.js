@@ -25,7 +25,6 @@ const EditAppoinment = (props) => {
   const updateAppoinment = (e) => {
     e.preventDefault();
     axiosClient.put(`api/v1/appoinments/${_id}`, appoinment).then((res) => {
-      console.log(res);
       props.setQuery(true);
       props.history.push("/");
     });
@@ -37,7 +36,6 @@ const EditAppoinment = (props) => {
   }
 
   const deleteAppoinment = (id) => {
-    console.log(id);
     Swal.fire({
       title: "¿Seguro quiere eliminar este registro?",
       text: "Un registro eliminado no se puede recuperar",
@@ -49,12 +47,11 @@ const EditAppoinment = (props) => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire("Eliminado!", "La cita se eliminó.", "success");
         //
         axiosClient
           .delete(`api/v1/appoinments/${id}`)
           .then((res) => {
-            console.log(res);
             props.setQuery(true);
             props.history.push("/");
           })
@@ -67,7 +64,9 @@ const EditAppoinment = (props) => {
 
   return (
     <Main role="main">
-      <Link to="/">Regresar</Link>
+      <Button>
+        <Link to="/">&#60;&#60;&#60; Regresar</Link>
+      </Button>
       <Form onSubmit={updateAppoinment}>
         <Fieldset>
           <Legend>Cita</Legend>

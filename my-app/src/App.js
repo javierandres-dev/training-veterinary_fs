@@ -45,7 +45,6 @@ function App() {
           path="/c-appoinment"
           component={() => <CreateAppoinment setQuery={setQuery} />}
         />
-
         <Route
           exact
           path="/e-appoinment/:id"

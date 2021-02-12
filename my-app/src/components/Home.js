@@ -1,29 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { Main } from "./Styles";
+import { Main, Card, Subtitle, Par, Button } from "./Styles";
 
 const Home = (props) => {
   if (props.appoinments.length === 0) return null;
   const appoinments = props.appoinments.docs;
-  const Card = styled.section``;
-  const Title = styled.h2``;
-  const Par = styled.p``;
+
   return (
     <Main role="main">
-      <Link to="/c-appoinment">Nueva cita</Link>
+      <Button>
+        <Link to="/c-appoinment">Nueva cita</Link>
+      </Button>
       {appoinments.map((appoinment) => (
-        <Card>
-          <Title>Cita</Title>
+        <Card key={appoinment._id}>
+          <Subtitle>Cita</Subtitle>
           <Par>Fecha: {appoinment.date}</Par>
           <Par>Hora: {appoinment.time}</Par>
           <Par>Cliente: {appoinment.client}</Par>
           <Par>Paciente: {appoinment.patient}</Par>
           <Par>Motivo: {appoinment.reason}</Par>
-          <Par>{appoinment.done.toString()}</Par>
-          <Link key={appoinment._id} to={`/e-appoinment/${appoinment._id}`}>
-            Editar {appoinment._id}
-          </Link>
+          <Button>
+            <Link to={`/e-appoinment/${appoinment._id}`}>Editar</Link>
+          </Button>
         </Card>
       ))}
     </Main>
@@ -31,3 +29,4 @@ const Home = (props) => {
 };
 
 export default Home;
+//<Par>{appoinment.done.toString()}</Par>

@@ -30,7 +30,7 @@ img {
   height: auto;
 }
 a {
-  color: var(--secondary);
+  color: var(--light);
 }
 a:link {
   text-decoration: none;
@@ -40,14 +40,15 @@ a:visited {
 }
 a:hover {
   text-decoration: underline;
-  color: var(--primary);
 }
 a:active {
   font-style: italic;
   text-decoration: underline;
-  color: var(--light);
 }
 `;
+
+/* LINK
+  ============================= */
 
 /* TYPOGRAPHY
   ============================= */
@@ -81,9 +82,32 @@ export const Main = styled.main`
   margin: auto;
 `;
 
+export const Card = styled.section`
+  max-width: 30rem;
+  margin: auto;
+`;
+
+export const Title = styled.h1`
+  font-size: 2rem;
+  text-align: center;
+  color: var(--primary);
+`;
+
+export const Subtitle = styled.h2`
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--primary);
+`;
+
+export const Par = styled.p`
+  padding: 0.5rem;
+`;
 /* FORMS
   ============================= */
-export const Form = styled.form``;
+export const Form = styled.form`
+  max-width: 30rem;
+  margin: auto;
+`;
 export const Fieldset = styled.fieldset`
   border-radius: 1rem;
 `;
@@ -103,8 +127,17 @@ export const Input = styled.input`
 `;
 export const Button = styled.button`
   display: block;
-  width: 50%;
+  width: 20rem;
   margin: 1rem auto;
+  border: thin solid var(--secondary);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: var(--secondary);
+  color: var(--light);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--primary);
+  }
 `;
 
 /* MEDIA QUERIES

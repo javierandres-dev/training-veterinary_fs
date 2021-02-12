@@ -11,16 +11,7 @@ const Container = styled.footer`
 const Footer = () => {
   return (
     <Container>
-      <p>
-        ¿Necesita desarrollo de software?&nbsp;
-        <a
-          href="https://www.javierandresgp.com"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Contácteme
-        </a>
-      </p>
+      <p>¿Necesita desarrollo de software?&nbsp; Contácteme</p>
     </Container>
   );
 };

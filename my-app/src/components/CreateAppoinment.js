@@ -22,7 +22,6 @@ const CreateAppoinment = (props) => {
 
   const newAppoinment = (e) => {
     e.preventDefault();
-    console.log(appoinment);
     axiosClient.post("api/v1/appoinments", appoinment).then((res) => {
       props.setQuery(true);
       props.history.push("/");
@@ -31,14 +30,28 @@ const CreateAppoinment = (props) => {
 
   return (
     <Main role="main">
-      <Link to="/">Regresar</Link>
+      <Button>
+        <Link to="/">&#60;&#60;&#60; Regresar</Link>
+      </Button>
       <Form onSubmit={newAppoinment}>
         <Fieldset>
           <Legend>Nueva cita</Legend>
           <Label htmlFor="date">Fecha</Label>
-          <Input type="date" id="date" name="date" onChange={updateState} />
+          <Input
+            type="date"
+            id="date"
+            name="date"
+            onChange={updateState}
+            required
+          />
           <Label htmlFor="time">Hora</Label>
-          <Input type="time" id="time" name="time" onChange={updateState} />
+          <Input
+            type="time"
+            id="time"
+            name="time"
+            onChange={updateState}
+            required
+          />
           <Label htmlFor="client">Cliente</Label>
           <Input
             type="text"
@@ -46,6 +59,7 @@ const CreateAppoinment = (props) => {
             name="client"
             placeholder="Nombre del propietario"
             onChange={updateState}
+            required
           />
           <Label htmlFor="patient">Paciente</Label>
           <Input
@@ -54,6 +68,7 @@ const CreateAppoinment = (props) => {
             name="patient"
             placeholder="Nombre de la mascota"
             onChange={updateState}
+            required
           />
           <Label htmlFor="reason">Motivo</Label>
           <Input
@@ -62,6 +77,7 @@ const CreateAppoinment = (props) => {
             name="reason"
             placeholder="Servicio, Consulta, Razón de la cita"
             onChange={updateState}
+            required
           />
         </Fieldset>
         <Button type="submit">Crear nueva cita</Button>

@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/github_pages-veterinary/static/css/main.0a3855b4.chunk.css",
+    "main.js": "/github_pages-veterinary/static/js/main.a6e3660e.chunk.js",
+    "main.js.map": "/github_pages-veterinary/static/js/main.a6e3660e.chunk.js.map",
+    "runtime-main.js": "/github_pages-veterinary/static/js/runtime-main.d7c9480f.js",
+    "runtime-main.js.map": "/github_pages-veterinary/static/js/runtime-main.d7c9480f.js.map",
+    "static/js/2.2cde316a.chunk.js": "/github_pages-veterinary/static/js/2.2cde316a.chunk.js",
+    "static/js/2.2cde316a.chunk.js.map": "/github_pages-veterinary/static/js/2.2cde316a.chunk.js.map",
+    "index.html": "/github_pages-veterinary/index.html",
+    "static/css/main.0a3855b4.chunk.css.map": "/github_pages-veterinary/static/css/main.0a3855b4.chunk.css.map",
+    "static/js/2.2cde316a.chunk.js.LICENSE.txt": "/github_pages-veterinary/static/js/2.2cde316a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d7c9480f.js",
+    "static/js/2.2cde316a.chunk.js",
+    "static/css/main.0a3855b4.chunk.css",
+    "static/js/main.a6e3660e.chunk.js"
+  ]
+}

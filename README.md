@@ -1,9 +1,9 @@
-# GitHub Pages
-:open_file_folder: github_pages-veterinary
+# Self―Training
+:octocat: training-veterinary_fs
 
 ## Description
-Consuming REST API Veterinary  
-How does it look? Take a look at [Veterinary](https://javierandresgp.github.io/github_pages-veterinary/)
+Consuming my own REST API Veterinary  
+How does it look? Take a look at [Veterinary](https://javierandresgp.github.io/training-veterinary_fs/)
 
 ## Stack
 * JavaScript

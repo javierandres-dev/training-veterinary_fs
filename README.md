@@ -3,7 +3,7 @@
 
 ## Description
 Consuming my own REST API Veterinary  
-How does it look? Take a look at [Veterinary](https://javierandresgp.github.io/training-veterinary_fs/)
+How does it look? Take a look at []()
 
 ## Stack
 * JavaScript
